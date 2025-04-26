@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>SEP Portal</title>
+	<link rel="shortcut icon" href="/img3/SEP (1).ico">
+	<link rel="stylesheet" href="/css/style18.css">
+	<link rel="stylesheet" href="/css/responsives4.css">
+	<link rel="stylesheet" href="https://fontawesome.com/">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+	 crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<style>
+		.table-container {
+			background-color: #f7f9fc;
+			padding: 40px;
+			max-width: 90%;
+			margin: 40px auto;
+			border-radius: 16px;
+			box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+		}
+
+		.table-container h2 {
+			text-align: center;
+			margin-bottom: 30px;
+			font-size: 30px;
+			color: #d30020;
+			font-weight: bold;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			border-radius: 12px;
+			overflow: hidden;
+		}
+
+		thead {
+			background-color: #0073e6;
+		}
+
+		th,
+		td {
+			font-size: 16px;
+			padding: 16px;
+			text-align: center;
+		}
+
+		th:nth-child(1),
+		td:nth-child(1) {
+			width: 20%;
+		}
+
+		th:nth-child(2),
+		td:nth-child(2) {
+			width: 20%;
+		}
+
+		th:nth-child(3),
+		td:nth-child(3) {
+			width: 50%;
+			text-align: left;
+		}
+
+		th:nth-child(4),
+		td:nth-child(4) {
+			width: 10%;
+		}
+
+		td {
+			background-color: #ffffff;
+			color: #111;
+			border-bottom: 1px solid #ddd;
+		}
+
+		tr:hover td {
+			background-color: #f0f7ff;
+			transition: 0.3s ease;
+		}
+
+		.info-btn {
+			display: inline-block;
+			background-color: #0073e6;
+			color: white;
+			padding: 8px 14px;
+			font-size: 14px;
+			border-radius: 25px;
+			text-decoration: none;
+			transition: background 0.3s ease;
+			cursor: pointer;
+		}
+
+		.info-btn:hover {
+			background-color: #005bb5;
+		}
+
+		.expand-row {
+			display: none;
+			background-color: #f9f9f9;
+		}
+
+		.expand-row td {
+			padding: 18px;
+			font-size: 16px;
+			text-align: left;
+			border-top: none;
+			color: #333;
+		}
+
+		@media screen and (max-width: 768px) {
+			.table-container {
+				padding: 20px;
+			}
+
+			th,
+			td {
+				font-size: 14px;
+				padding: 12px;
+			}
+
+			.info-btn {
+				padding: 6px 10px;
+			}
+
+			.expand-row td {
+				font-size: 14px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Header Section -->
+	<header class="header">
+		<div class="header-container">
+			<div class="logo">
+				<img src="/img3/SEP (1).png" alt="Logo" />
+                </div>
+                <div class="title" id="title">
+                    <h2>National Talent Search Portal</h2>
+                </div>
+                <div class="logo1">
+                    <img src="/img3/sai_new_logo.jpg" alt="logo" />
+                </div>
+                <div class="language-dropdown">
+                    <select onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav>
+            <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
+            <div class="img"></div>
+            <div class="nav1">
+                <a href="javascript:void(0);"
+                    onclick="navigateWithLoader('main.php')"
+                    id="home">Home</a>
+                <a href="javascript:void(0);"
+                    onclick="navigateWithLoader('centre.php')"
+                    id="centres">Centres</a>
+                <a onclick="CB()" id="check-eligibility">Check Eligibility</a>
+                <a href="javascript:void(0);"
+                    onclick="navigateWithLoader('discipline.php')"
+                    id="discipline">Discipline</a>
+                <a href="javascript:void(0);"
+                    onclick="navigateWithLoader('faq.php')" id="faq">FAQ</a>
+                <a href="#process_section" id="process">Process</a>
+                <a href="javascript:void(0);"
+                    onclick="navigateWithLoader('contact.php')"
+                    id="contact">Contact Us</a>
+            </div>
+            <div class="nav2">
+                <h2>Welcome, <?php echo $_SESSION['user']; ?>!</h2>
+                    <a href="../user/logout6.php">Logout</a>
+            </div>
+        </nav>
+
+        <script>
+    function CB() {
+      location.href="CB1.php";
+    }
+  </script>
+
+        <!-- Main Section -->
+        <main>
+            <div class="table-container">
+                <h2>Coach Center Information</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Head Coach</th>
+                            <th>Mobile Number</th>
+                            <th>Center Address</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Charles Dias</strong></td>
+                            <td>📞 +91 779 8989 624</td>
+                            <td>📍 Sesa Football Academy, Bella Vista Vaddo, P.O Thivim, Sirsaim Bardez, Goa-403502</td>
+                            <td><a class="info-btn" onclick="toggleInfo(this)"></a></td>
+                        </tr>
+                        <tr class="expand-row">
+                            <td colspan="4">
+                                📧 <strong>Email:</strong> sfa@vedanta.co.in
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- Loader Section -->
+        <div id="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <script src="/js/contact5.js"></script>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-section locate">
+                <h3 id="footer-locate">📍 Locate Us</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d777.0!2d74.3751572!3d16.4133214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc0f18a0cebdd8d%3A0x2a05e7a8e51eeafc!2sShri%20Saibaba%20Devasthana%20-%20(Nippani)!5e0!3m2!1sen!2sin!4v1709385678900!5m2!1sen!2sin&t=k&z=18"
+                    width="80%" height="200vh" style="border:0;" allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <div id="f2" class="footer-section links">
+                <h3><img src="img3/rel-icon.png" alt><b>Related
+                        Links</b></h3><br><hr><br><br>
+                <h3>👤 Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+                <div class="developer">
+                    <br>
+                    <p>Developed By <strong>Threelancer@co.ltd</strong></p>
+                </div>
+            </div>
+
+            <div class="footer-section contact">
+                <h3 id="footer-contact-title">📞 Contact Us</h3>
+                <p id="footer-contact-platform-name">Sports Eligibility
+                    Platform</p>
+                <p id="footer-contact-office-address">Head Office Nipani High
+                    Court side (Parvati Corner), Akkol Road, Nipani - 591237</p>
+                <p id="footer-contact-email-text">If you have any feedback,
+                    grievance, or are not satisfied, please email to:</p>
+                <p
+                    id="footer-contact-email-id"><strong>sep.elgbt@gmail.com</strong></p>
+            </div>
+        </footer>
+        <script>
+            function toggleInfo(button) {
+                // Get the parent row and the next sibling row
+                const row = button.closest('tr');
+                const expandRow = row.nextElementSibling;
+    
+                // Toggle visibility
+                if (expandRow.style.display === 'table-row') {
+                    expandRow.style.display = 'none';
+                    button.textContent = 'More Info';
+                } else {
+                    expandRow.style.display = 'table-row';
+                    button.textContent = 'Less Info';
+                }
+            }
+        </script>
+    </body>
+</html>

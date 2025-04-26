@@ -1,0 +1,495 @@
+/* Tablet View (768px and below) */
+@media (max-width: 768px) {
+
+    .s1{
+        height: auto;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .intro{
+        width: 95%;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .intro .img{
+        height: 35vh;
+        width: 80%;
+    }
+    .intro .info1{
+        height: 45vh;
+        width: 80%;
+    }
+    .info1 p{
+        font-size: 1.7rem;
+    }
+    .s2 .info2{
+        width: 80%;
+    }
+    .s2{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .s3{
+        height: auto;
+    }
+    .process{
+        height: auto;
+    }
+    .info2 p{
+        font-size: 1.8rem;
+    }
+    .p1{
+        width: 100%;
+        height: 40vh;
+    }
+    .process .p1 img{
+        height: 40vh;
+        width: 80%;
+    }
+    .p2{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 769px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 30vh;
+    }
+
+    .nav1, .nav2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav1{
+        height: 38%;
+    }
+    .nav2{
+        height: 20%;
+        margin-right: 15px;
+    }
+
+    .nav1 a, .nav2 a {
+        margin: 10px;
+        border: none;
+        padding: 0;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+    
+}
+
+/* ====== Tablet (768px - 1024px) ====== */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .nav1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav1 a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .nav2 {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .nav2 h2 {
+        font-size: 16px;
+    }
+
+    .nav2 a {
+        font-size: 14px;
+        display: inline-block;
+        margin-top: 5px;
+    }
+}
+
+/* ====== Mobile (Below 768px) ====== */
+@media screen and (max-width: 767px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+    .nav1 {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #e31e24;
+        padding: 10px 0;
+    }
+
+    .nav1 a {
+        display: block;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        text-align: left;
+    }
+
+    .nav2 {
+        width: 100%;
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .nav2 h2 {
+        font-size: 15px;
+        word-break: break-word;
+    }
+
+    .nav2 a {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    .nav1.show {
+        display: flex !important;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1400px){
+    .intro{
+        margin-top: 50px;
+        margin-bottom: 55px;
+        height: 50vh;
+    }
+    .nav2{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+@media(max-width: 480px) {
+    .nav1{
+        height: 40vh;
+    }
+    .nav2{
+        height: 20vh;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .intro,
+    .process {
+        /* margin: auto; */
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    .process {
+        margin: auto;
+        width: 85%;
+    }
+
+    .info1,
+    .info2 {
+        width: 100%;
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .intro .img {
+        width: 80%;
+        height: 20vh;
+    }
+
+    .process p {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    .process img{
+        height: 10vh;
+    }
+    h1,
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    main {
+        height: auto;
+        width: 100%;
+    }
+    .process_section
+    {
+        height: auto;
+    }
+}
+
+/* login form */
+@media (max-width: 769px) {
+    .login_form {
+        width: 90%;
+        height: auto;
+        padding: 30px;
+    }
+
+    .login_form h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin: 20px;
+    }
+
+    .field {
+        width: 80%;
+        height: 10vh;
+        font-size: 1rem;
+        margin: 8px;
+    }
+
+    .btnfld {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+    }
+
+    .btn {
+        width: 50%;
+        height: 6vh;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login_form {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .login_form h1 {
+        font-size: 1.8rem;
+    }
+
+    .field {
+        width: 90%;
+        height: 7vh;
+        font-size: 0.9rem;
+    }
+
+    .btnfld {
+        flex-direction: column;
+        gap: 15px;
+        height: auto;
+    }
+
+    .btn {
+        width: 70%;
+        height: 6vh;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 769px) {
+    .rgs_intro {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .register {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .register h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .field {
+        width: 80%;
+        height: 7vh;
+        font-size: 1rem;
+        margin: 8px;
+    }
+
+    .btnfld {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+    }
+
+    .btn {
+        width: 50%;
+        height: 6vh;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .rgs_intro {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .register {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .register h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .field {
+        width: 90%;
+        height: 5vh;
+        font-size: 0.9rem;
+        margin: 6px;
+    }
+
+    .btnfld {
+        flex-direction: column;
+        gap: 8px;
+        height: auto;
+    }
+
+    .btn {
+        width: 70%;
+        height:6vh;
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (min-width: 770px) and (max-width: 1400px) {
+            .rgs_intro{
+                height: 50vh;
+                margin: 0;
+            }
+            .register{
+                height: 45vh;
+            }
+            .nav2{
+                display: flex;
+                flex-direction: row;
+            }
+            .nav1, .nav2{
+                height: 5vh;
+            }
+            nav{
+                height: 25vh;
+            }
+        }
+
+/* footer code */
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .footer-section {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 20px;
+    }
+
+    #f1 img, #f2 img {
+        max-width: 80%;
+    }
+
+    /* Reduce font size */
+    .footer-section h3 {
+        font-size: 16px;
+    }
+
+    .social-icons i {
+        font-size: 18px;
+        margin: 8px;
+    }
+
+    .contact p {
+        font-size: 13px;
+    }
+}
+
+/* centres table */
+@media (max-width: 768px) {
+    .custom-table th, .custom-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-table {
+        width: 100%;
+        display: block;
+        overflow-x: auto; /* Enables horizontal scroll if needed */
+    }
+
+    .custom-table th, .custom-table td {
+        padding: 6px; /* Slightly reduced padding */
+        font-size: 13px; /* Smaller font size for better fit */
+        white-space: nowrap; /* Prevents text from wrapping in small screens */
+    }
+
+    .custom-table th:nth-child(1),
+    .custom-table td:nth-child(1) {
+        width: 8%; /* Keeps Sr. No. column compact */
+    }
+
+    .custom-table th:nth-child(2),
+    .custom-table td:nth-child(2) {
+        width: 30%; /* Centres */
+    }
+
+    .custom-table th:nth-child(3),
+    .custom-table td:nth-child(3) {
+        width: 25%; /* Scheme */
+    }
+
+    .custom-table th:nth-child(4),
+    .custom-table td:nth-child(4) {
+        width: 18%; /* Region */
+    }
+
+    .custom-table th:nth-child(5),
+    .custom-table td:nth-child(5) {
+        width: 40%; /* Address */
+    }
+}

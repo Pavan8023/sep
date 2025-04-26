@@ -1,0 +1,205 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* Container for Layout */
+.container {
+    display: flex;
+    flex-wrap: wrap;  /* Ensures responsiveness */
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Left Section - Eligibility Form */
+.left-section {
+    flex: 1;  /* Takes up 60% of space */
+    padding: 20px;
+    min-width: 60%;
+}
+
+.left-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #27ae60;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #219150;
+}
+
+/* Right Section - Athlete Image & Info */
+.right-section {
+    flex: 0.4;  /* Takes up 40% of space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    min-width: 35%;
+}
+
+.athlete-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* SEP Info */
+.info {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.info h2 {
+    color: #333;
+}
+
+.info p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .athlete-img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* error box */
+
+/* Modal styling */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    background: white;
+    padding: 30px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    width: 400px; /* Increased width */
+    height: 220px; /* Increased height */
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Slower transition */
+}
+
+/* Show modal with smooth animation */
+.modal.show {
+    display: block;
+    opacity: 1;
+    animation: scaleUp 0.5s ease-out forwards; /* Slower animation */
+}
+
+/* Scale increasing animation */
+@keyframes scaleUp {
+    0% {
+        transform: translate(-50%, -50%) scale(0.6);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.modal h3 {
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.modal button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background: #0056b3;
+}
