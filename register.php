@@ -46,8 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -56,10 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <title>Register Page</title>
         <link rel="shortcut icon" href="/img3/SEP (1).ico">
         <link rel="stylesheet" href="/css/style18.css">
-	<link rel="stylesheet" href="/css/responsives7.css">
+    <link rel="stylesheet" href="/css/responsives7.css">
     </head>
     <style>
-        /* Full-screen mode */
         .register.fullscreen {
             width: 100%;
             height: 100%;
@@ -98,8 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         .toggle-icon:hover {
             transform: scale(1.2);
         }
-
-        </style>
+    </style>
     </head>
     
     <body>
@@ -139,7 +135,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <a href="javascript:void(0);" onclick="navigateWithLoader('login.php')" id="login">Login</a>
                 <a href="javascript:void(0);" onclick="navigateWithLoader('register.php')" id="register">Register</a>
             </div>
-
     </nav>
     
         <main>
@@ -147,13 +142,32 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <div class="rgs_intro">
                     <form class="register" method="post" action="">
                         <h1>New User</h1>
-                        <input type="text" name="name" class="field" placeholder="Enter your full name">
-                        <input type="number" name="number" class="field" placeholder="Enter your number">
-                        <input type="date" name="date" class="field" id="date" placeholder="Select Date">
-                        <input type="email" name="email" class="field" placeholder="Enter your email">
-                        <input type="password" name="pass" class="field" placeholder="Set your password">
+                        <input type="text" name="name" class="field" 
+                               placeholder="Full Name" required
+                               pattern="[A-Za-z\s']{3,50}" 
+                               title="Only alphabets, spaces and apostrophes allowed (3-50 characters)">
+
+                        <input type="tel" name="number" class="field" 
+                               placeholder="Phone Number" required
+                               pattern="[0-9]{10}" minlength="10" maxlength="10"
+                               title="10 digit phone number">
+
+                        <input type="date" name="date" class="field" id="date" 
+                               required max="<?php echo date('Y-m-d'); ?>"
+                               title="Cannot select future date">
+
+                        <input type="email" name="email" class="field" 
+                               placeholder="Email Address" required
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                               title="Valid email format required">
+
+                        <input type="password" name="pass" class="field" 
+                               placeholder="Set Password" required
+                               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}"
+                               title="Must contain at least 8 characters with uppercase, lowercase, number and special character">
+
                         <div class="btnfld">
-                            <button type="submit" value="submit" class="btn" href="javascript:void(0);" onclick="navigateWithLoader()">Submit</button>
+                            <button type="submit" value="submit" class="btn">Submit</button>
                             <button type="reset" value="reset" class="btn">Clear</button>
                         </div>
                         <p>Already Have an Account?<a href="javascript:void(0);" onclick="navigateWithLoader('login.php')" id="login">Login Here</a></p>
@@ -162,10 +176,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 </div>
             </section>
             <!-- Loader Container -->
-<div id="loader">
-    <div class="spinner"></div>
-</div>
-    <script src="/js/home5.js"></script>
+            <div id="loader">
+                <div class="spinner"></div>
+            </div>
+            <script src="/js/home5.js"></script>
         </main>
         <script>
             function CB(){

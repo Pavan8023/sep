@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Eligibility Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .loader-bar {
+            width: 0;
+            height: 5px;
+            background: #22c55e;
+            animation: load 15s linear forwards;
+        }
+
+        @keyframes load {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        .sports-icon {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .payment-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .show-payment {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 min-h-screen text-white overflow-x-hidden">
+    
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <img src="/img3/SEP (1).png" alt="Logo" class="w-32 mx-auto mb-4 sports-icon">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Sports Eligibility Portal</h1>
+            <p class="text-gray-400 md:text-lg">Verify Your Sports Eligibility</p>
+        </header>
+
+        <!-- Loading Section -->
+        <div id="loadingSection">
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="mb-8">
+                    <div class="loader-bar"></div>
+                </div>
+                
+                <div class="animate-pulse space-y-4">
+                    <div class="text-4xl">⚡</div>
+                    <h2 class="text-xl font-semibold">Analyzing Requirements</h2>
+                    <p class="text-gray-400">Preparing your eligibility checklist...</p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 mt-12">
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="text-3xl mb-2">🏃♂️</div>
+                        <p class="text-sm">Athlete Profile</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="text-3xl mb-2">📋</div>
+                        <p class="text-sm">Eligibility Check</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <div class="text-3xl mb-2">✅</div>
+                        <p class="text-sm">Verification</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Section -->
+        <div id="paymentSection" class="payment-card max-w-md mx-auto text-center bg-gray-800 p-8 rounded-xl shadow-xl mt-12">
+            <div class="text-4xl mb-4">🔒</div>
+            <h2 class="text-2xl font-bold mb-4">Complete Your Registration</h2>
+            <p class="text-gray-400 mb-6">
+                One-time verification fee of 
+                <span class="text-green-500 font-bold">₹10</span> 
+                (No. GST) required to proceed
+            </p>
+            <ul class="text-left mb-6 space-y-2 text-gray-300">
+                <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>
+                    Full eligibility analysis
+                </li>
+                <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>
+                    Coaches Information
+                </li>
+                <li class="flex items-center">
+                    <span class="text-green-500 mr-2">✓</span>
+                    Centers Information
+                </li>
+            </ul>
+            <a href="/user/payment.php" 
+               class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold inline-block transition-all transform hover:scale-105">
+                Proceed to Payment →
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const paymentSection = document.getElementById('paymentSection');
+            const loadingSection = document.getElementById('loadingSection');
+
+            setTimeout(() => {
+                loadingSection.style.display = 'none';
+                paymentSection.classList.add('show-payment');
+                
+                // Add confetti animation
+                const confettiCount = 20;
+                for(let i = 0; i < confettiCount; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'absolute w-2 h-2 bg-yellow-400 rounded-full';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear`;
+                    document.body.appendChild(confetti);
+                }
+            }, 15000);
+        });
+
+        // Add confetti animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
